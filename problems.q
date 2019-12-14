@@ -22,7 +22,7 @@ f:{ / function to sort the elements of the array
 / n=5; 31452 -- Person 1 gets gift from person 3
 / 52341 - Invalid result, person 2 3 4 gets gift for themselves
 
-s:{if[2>x;"You cannot gift yourself"]; $[max(til x)=o:{neg[x]?x}x;.z.s[x];o]}
+s:{if[2>x;'"You cannot gift yourself"]; $[max(til x)=o:{neg[x]?x}x;.z.s[x];o]}
 /Test - s'[10#5]
 /Unit Test - any any (til 5)=/:s'[10#5]
 /- Performance Test - \t s'[100#500]
