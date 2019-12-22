@@ -26,3 +26,10 @@ s:{if[2>x;'"You cannot gift yourself"]; $[max(til x)=o:{neg[x]?x}x;.z.s[x];o]};
 /Test - s'[10#5]
 /Unit Test - any any (til 5)=/:s'[10#5]
 /- Performance Test - \t s'[100#500]
+
+//- Largest Sum Contiguous Subarray - Kedane
+/- Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers which has the largest sum.
+/- Input - list of elements
+/- Output - Largest sum contiguous subarray
+f:{msf::meh::0;last{meh::meh+x;$[meh<0;meh::0;msf<meh;msf::meh;`];msf}'[x]};
+/- Test - f[-2, -3, 4, -1, -2, 1, 5, -3]
