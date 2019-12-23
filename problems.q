@@ -31,5 +31,8 @@ s:{if[2>x;'"You cannot gift yourself"]; $[max(til x)=o:{neg[x]?x}x;.z.s[x];o]};
 /- Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers which has the largest sum.
 /- Input - list of elements
 /- Output - Largest sum contiguous subarray
-f:{msf::meh::0;last{meh::meh+x;$[meh<0;meh::0;msf<meh;msf::meh;`];msf}'[x]};
+f:{msf::meh::0;last{meh::meh+x;$[meh<0;meh::0;msf<meh;msf::meh;::];msf}'[x]};
 /- Test - f[-2, -3, 4, -1, -2, 1, 5, -3]
+
+/- Create a function that accepts even number of parameters of arbitrary length and returns a dictionary. The first parameter is a key, the second parameter is the value of that key, the third is another key that has a value stored in the fourth parameter, etc.
+'[{(!) . flip 2 cut x}; enlist][1;2;3;4]
