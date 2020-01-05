@@ -4,7 +4,7 @@
 //**
 
 /- Factorial
-fact:{*/1+til x};
+fact:{*/[1+til x]};
 
 /- Fibonacci Series
 fib:{{x,sum -2#x}/[x;0 1]};
