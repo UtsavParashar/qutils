@@ -36,3 +36,13 @@ f:{msf::meh::0;last{meh::meh+x;$[meh<0;meh::0;msf<meh;msf::meh;::];msf}'[x]};
 
 /- Create a function that accepts even number of parameters of arbitrary length and returns a dictionary. The first parameter is a key, the second parameter is the value of that key, the third is another key that has a value stored in the fourth parameter, etc.
 '[{(!) . flip 2 cut x}; enlist][1;2;3;4]
+
+/- Create a function to get the sum of null count of each column
+/- simple easy sol
+{t::([] a:10?10; b:10?10.; c:10?`4; d:string 10?`4; e:10?(01b));
+update b:0nf from `t where a>5;
+update c:` from `t where a>7;
+update d:(" ") from  `t where a>4;
+    }[]
+sum null t; /- easy solution
+flip `columnName`nullCount!(key;value)@\:flip flip enlist each (key a)!last each value a:sum null t;
