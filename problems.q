@@ -46,3 +46,11 @@ update d:(" ") from  `t where a>4;
     }[]
 sum null t; /- easy solution
 flip `columnName`nullCount!(key;value)@\:flip flip enlist each (key a)!last each value a:sum null t;
+
+/- We have two tables
+/- One table with unique elements in a column
+/- second table with duplicate elements for same column
+/- Required output is to join both tables where all duplicate rows are present and also unique rows of first table are present.
+l:([]c1:`a`b`c`d;c2:10 20 30 40); /- table 1
+r:([]c1:`a`a`a`b`b;c3:100 200 300 400 50); /- table 2
+(select from l where c1 in l[`c1] except r`c1) uj (r lj 1!l)
