@@ -55,3 +55,5 @@ https://stackoverflow.com/questions/60173431/utility-like-except-in-case-of-tabl
 l:([]c1:`a`b`c`d;c2:10 20 30 40); /- table 1
 r:([]c1:`a`a`a`b`b;c3:100 200 300 400 50); /- table 2
 (select from l where c1 in l[`c1] except r`c1) uj (r lj 1!l)
+l where not l[`c1] in r[`c1] /- Optimized
+#[1#`c1;r]_1!l /- Optimized and elegant
