@@ -57,3 +57,10 @@ r:([]c1:`a`a`a`b`b;c3:100 200 300 400 50); /- table 2
 (select from l where c1 in l[`c1] except r`c1) uj (r lj 1!l)
 l where not l[`c1] in r[`c1] /- Optimized
 #[1#`c1;r]_1!l /- Optimized and elegant
+
+/- You have an array of numerics, you need to create a new array with the multiplication of all the elements of that array except for the element in index
+/Eg: Input list - (2;3;4;5)
+/Output list - (3*4*5; 2*4*5; 2*3*5; 2*3*4) ~ (60;40;30;24)
+/Solution - Multiply all elements of input list and divide by each element on that index.
+q)l:2 3 4 5
+(*/[l])%l /- 60 40 30 24f
