@@ -63,4 +63,4 @@ l where not l[`c1] in r[`c1] /- Optimized
 /Output list - (3*4*5; 2*4*5; 2*3*5; 2*3*4) ~ (60;40;30;24)
 /Solution - Multiply all elements of input list and divide by each element on that index.
 q)l:2 3 4 5
-(*/[l])%l /- 60 40 30 24f
+{(*/[x])%x}l /- 60 40 30 24f
