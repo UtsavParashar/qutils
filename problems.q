@@ -64,3 +64,8 @@ l where not l[`c1] in r[`c1] /- Optimized
 /Solution - Multiply all elements of input list and divide by each element on that index.
 q)l:2 3 4 5
 {(*/[x])%x}l /- 60 40 30 24f
+
+/- Get the sum of squares of digits for a number
+/- If the number is 325 then 3^2 + 2^2 + 5^2 = 9+4+25 = 38
+{sum xexp[10 vs x;2]}[325]
+/- vs[x;y] - Base x representation - Where x and y are integer, the result is the representation of y in base x
