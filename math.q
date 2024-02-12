@@ -17,3 +17,6 @@ per:{{raze x{x,/:y except x}\:y}[;y]/[x-1;y]};
 com:{{raze x{x,/:y where y>max x}\:y}[;y]/[x-1;y]}
 /Test - com[2;1+til 3]
 
+
+/- Moving Pencentage Change
+mpct:{100*(1_deltas x)%-1_x}
