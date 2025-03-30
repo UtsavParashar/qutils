@@ -6,6 +6,9 @@
 /- Factorial
 fact:{*/[1+til x]};
 
+/- Factorial using recursion
+fact:{if[x<=1;:1]; x*.z.s[x-1]}
+
 /- Fibonacci Series
 fib:{{x,sum -2#x}/[x;0 1]};
 
