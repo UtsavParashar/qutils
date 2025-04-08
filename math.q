@@ -44,10 +44,19 @@ pow:{if[x=0;:0];res:prd y#x; $[y>0;res;1%res]}
 mpct:{100*(1_deltas x)%-1_x}
 
 
+// kdb index phrases - https://code.kx.com/phrases/#mathematics
 /- Pascals Triangle
-q)parscalsTriange:{{(+)prior x,0}\[x;1]}
-/ Test - q)parscalsTriange 3
+q)parscalsTriangle:{{(+)prior x,0}\[x;1]}
+/ Test - q)parscalsTriangle 3
 / 1
 / 1 1
 / 1 2 1
 / 1 3 3 1
+/ 
+q)pascalsTriangle:{{0+':x,0}\[x;1]}
+/ Test q)pascalsTriangle 4
+/ 1
+/ 1 1
+/ 1 2 1
+/ 1 3 3 1
+/ 1 4 6 4 1
