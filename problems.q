@@ -69,3 +69,8 @@ q)l:2 3 4 5
 /- If the number is 325 then 3^2 + 2^2 + 5^2 = 9+4+25 = 38
 {sum xexp[10 vs x;2]}[325]
 /- vs[x;y] - Base x representation - Where x and y are integer, the result is the representation of y in base x
+/ 
+
+/- Expand brackets
+q)f:{raze {(-1_x[0]),raze(value last x[0])#enlist last x}each string parse x}
+/- Test q)f"ab3[ac]dd2[d]" --> "abacacacdddd"
