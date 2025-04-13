@@ -74,3 +74,11 @@ q)l:2 3 4 5
 /- Expand brackets
 q)f:{raze {(-1_x[0]),raze(value last x[0])#enlist last x}each string parse x}
 /- Test q)f"ab3[ac]dd2[d]" --> "abacacacdddd"
+/ 
+
+/- Check if a list is sorted
+/ https://stackoverflow.com/questions/79571470/how-do-i-assert-a-column-list-is-ordered-in-kdb
+isSorted:{@[{`s#x;1b};x;0b]} / try to apply `s and return 1b if succeeded; 0b otherwise
+/- Tests
+/ q)isSorted 1 2 3 2 / 0b
+/ q)isSorted 1 2 2 3 / 1b
